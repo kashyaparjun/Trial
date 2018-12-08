@@ -1,0 +1,85 @@
+.navbar-fixed-top {
+    min-height: 80px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 80px;
+}
+
+@media (max-width: 767px) {
+    .navbar-nav > li > a {
+    line-height: 20px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    text-align: center;
+    }
+    .navbar-header > .navbar-brand > a > img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url('../../assets/Pacifico.ttf');
+}
+
+.newbc{
+    font-size: 40px;
+    font-family: myFirstFont;
+}
+
+a{
+    font-family: myFirstFont;
+}
+
+body{
+    font-family: myFirstFont;
+}
+
+.prodImg{
+    width: 200px;
+}
+
+.inputer{
+    margin-left: 10px;
+    width: 50px;
+    margin-right: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.mat{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.mat2{
+    margin-left: 15px;
+}
+
+.mat3{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.foot {
+    background-color: black;
+    color: white;
+    font-family: myFirstFont;
+}
+
+.divider {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+}
+

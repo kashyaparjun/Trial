@@ -1,0 +1,196 @@
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/Home">
+          <img src="assets/logo.png" alt="Logo" style="width:40px;">
+        </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li>
+          <a routerLink="/Home" class="newbc">Son Says</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a routerLink="/Order">Order</a>
+        </li>
+        <li>
+          <a routerLink="/About">About Us</a>
+        </li>
+        <li>
+          <a>Contact Us</a>
+        </li>
+        <li>
+          <a routerLink="/Checkout">
+            <span class="glyphicon glyphicon-shopping-cart"></span>({{getCount()}})</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <img class="prodImg" src="assets/one.jpeg" />
+      </div>
+      <div class="col-sm-8">
+        <h2>Wash and Fold</h2>
+        <hr>
+        <div class="row mat2">
+          <h3>
+            <s>₹65.00</s> ₹{{orderState.fold_p}}.00 / Kg</h3>
+        </div>
+        <div class="row mat">
+          <button type="button" (click)="sub_fold()" class="btn btn-success">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+          <input type="number" class="inputer" [(ngModel)]="orderState.fold" (change)="changed()">
+          <button type="button" (click)="add_fold()" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </div>
+        <div class="row mat3">
+          <h4>
+            <b style="margin-right: 10px;">Note:</b>Our representatives will measure your clothes in your place. Your clothes will be measured at your place
+            in kg basis.</h4>
+        </div>
+      </div>
+    </div>
+    <hr class="divider" >
+    <div class="row">
+      <div class="col-sm-4">
+        <img class="prodImg" src="assets/two.png" />
+      </div>
+      <div class="col-sm-8">
+        <h2>Wash and Iron</h2>
+        <hr>
+        <div class="row mat2">
+          <h3>
+            <s>₹75.00</s> ₹{{orderState.iron_p}}.00 / Kg</h3>
+        </div>
+        <div class="row mat">
+          <button type="button" (click)="sub_iron()" class="btn btn-success">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+          <input type="number" class="inputer" [(ngModel)]="orderState.iron" (change)="changed()" >
+          <button type="button" (click)="add_iron()" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </div>
+        <div class="row mat3">
+          <h4>
+            <b style="margin-right: 10px;">Note:</b>Our representatives will measure your clothes in your place. Your clothes will be measured at your place
+            in kg basis.</h4>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <h2>Total: ₹{{orderState.total}}</h2>
+    <br>
+    <button type="button" style="margin-left: 10px;" *ngIf="orderState.total>0" routerLink="/Checkout" class="btn btn-success">Checkout</button>
+    <br>
+    <br>
+  </div>
+</body>
+<section class="footer-top-section home-footer foot">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-8 col-sm-12">
+        <div class="footer-widget about-widget">
+          <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam fringilla faucibus urna, id dapibus
+            erat iaculis ut. Integer ac sem.</p>
+          <div class="cards">
+            <img src="assets/img/cards/5.png" alt="">
+            <img src="assets/img/cards/4.png" alt="">
+            <img src="assets/img/cards/3.png" alt="">
+            <img src="assets/img/cards/2.png" alt="">
+            <img src="assets/img/cards/1.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <div class="footer-widget">
+          <h6 class="fw-title">usefull Links</h6>
+          <ul>
+            <li>
+              <a href="#">Partners</a>
+            </li>
+            <li>
+              <a href="#">Bloggers</a>
+            </li>
+            <li>
+              <a href="#">Support</a>
+            </li>
+            <li>
+              <a href="#">Terms of Use</a>
+            </li>
+            <li>
+              <a href="#">Press</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <div class="footer-widget">
+          <h6 class="fw-title">Sitemap</h6>
+          <ul>
+            <li>
+              <a href="#">Partners</a>
+            </li>
+            <li>
+              <a href="#">Bloggers</a>
+            </li>
+            <li>
+              <a href="#">Support</a>
+            </li>
+            <li>
+              <a href="#">Terms of Use</a>
+            </li>
+            <li>
+              <a href="#">Press</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <div class="footer-widget">
+          <h6 class="fw-title">Shipping & returns</h6>
+          <ul>
+            <li>
+              <a href="#">About Us</a>
+            </li>
+            <li>
+              <a href="#">Track Orders</a>
+            </li>
+            <li>
+              <a href="#">Returns</a>
+            </li>
+            <li>
+              <a href="#">Jobs</a>
+            </li>
+            <li>
+              <a href="#">Shipping</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <div class="footer-widget">
+          <h6 class="fw-title">Contact</h6>
+          <div class="text-box">
+            <p>Your Company Ltd </p>
+            <p>1481 Creekside Lane Avila Beach, CA 93424, </p>
+            <p>+53 345 7953 32453</p>
+            <p>office@youremail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
